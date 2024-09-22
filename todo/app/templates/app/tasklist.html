@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks%}
+            <li>
+                <strong>{{task.name}}</strong> -Due: {{task.due_date}}
+            </li>
+            {% empty%}
+
+            <li> no task added</li>
+
+        {% endfor %}
+    </ul>
+
+    <a href=""{% url 'addTask' %}>add a new task</a>
+</body>
+</html>
